@@ -65,5 +65,5 @@ Using-Sdk $sdkVersion
 dotnet --info
 dotnet restore
 dotnet build --configuration Release
-dotnet run --project .\tests\SentimentFS.Text.Tests\SentimentFS.Text.Tests.fsproj
+dotnet run --project .\tests\SentimentFS.TextUtilities.Tests\SentimentFS.TextUtilities.Tests.fsproj
 if ($LASTEXITCODE -ne 0) { throw "Failed to build" } 

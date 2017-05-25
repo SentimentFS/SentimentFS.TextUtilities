@@ -11,4 +11,4 @@ script:
   # Run a new console app
   - dotnet restore
   - dotnet build
-  - dotnet run --project ./tests/SentimentFS.Text.Tests/SentimentFS.Text.Tests.fsproj
+  - dotnet run --project ./tests/SentimentFS.TextUtilities.Tests/SentimentFS.TextUtilities.Tests.fsproj
