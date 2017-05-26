@@ -1,6 +1,9 @@
-﻿module SentimentFS_TextUtilities_Tests
-open Expecto
+﻿namespace SentimentFS.TextUtilities.Tests
 
-[<EntryPoint>]
-let main argv =
-    Tests.runTestsInAssembly defaultConfig argv
+module Program =
+    
+    open Expecto
+    
+    [<EntryPoint>]
+    let main argv =
+        Tests.runTestsInAssembly defaultConfig argv
