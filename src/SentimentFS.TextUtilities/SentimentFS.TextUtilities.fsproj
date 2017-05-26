@@ -9,7 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Library.fs" />
+    <Compile Include="Text.fs" />
+    <Compile Include="Tokenization.fs" />
   </ItemGroup>
 
   <ItemGroup>
