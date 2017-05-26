@@ -11,6 +11,7 @@
   <ItemGroup>
     <Compile Include="Text.fs" />
     <Compile Include="Tokenization.fs" />
+    <Compile Include="Filter.fs" />
   </ItemGroup>
 
   <ItemGroup>
