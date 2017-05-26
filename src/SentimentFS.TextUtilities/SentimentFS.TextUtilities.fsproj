@@ -5,7 +5,7 @@
     <Version>1.0.0</Version>
     <Authors>Dominik Kotecki</Authors>
     <Company>SentimentFS</Company>
-    <Description>SentimentFS NaiveBayes Implementation</Description>
+    <Description>SentimentFS Text Utilities</Description>
   </PropertyGroup>
 
   <ItemGroup>

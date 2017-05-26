@@ -66,4 +66,5 @@ dotnet --info
 dotnet restore
 dotnet build --configuration Release
 dotnet run --project .\tests\SentimentFS.TextUtilities.Tests\SentimentFS.TextUtilities.Tests.fsproj
+dotnet pack .\src\SentimentFS.TextUtilities\SentimentFS.TextUtilities.fsproj --configuration Release --include-symbols --include-source
 if ($LASTEXITCODE -ne 0) { throw "Failed to build" } 
