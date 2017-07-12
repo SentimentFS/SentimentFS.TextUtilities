@@ -11,4 +11,4 @@ module Tokenizer =
             |> Array.toList
 
     let wordsSequence(word: string): string seq =
-        word |> split [|' '; '\n'|] |> Array.filter(String.IsNullOrEmpty >> not) |> Array.toSeq
+        word |> split [|' '; '\n'|] |> Array.filter(String.IsNullOrEmpty >> not) |> Array.map(fun x -> x |> replace("\n")(String.Empty) |> replace("\r")(String.Empty) |> replace("\t")(String.Empty)  ) |> Array.toSeq
