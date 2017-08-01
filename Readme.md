@@ -1,13 +1,17 @@
-# SentimentFS.TextUtilities
+# SentimentFS_TextUtilities
+
+MacOS/Linux | Windows
+--- | ---
+[![Travis Badge](https://travis-ci.org/SentimentFS/SentimentFS_TextUtilities.svg?branch=master)](https://travis-ci.org/SentimentFS/SentimentFS_TextUtilities) | [![Build status](https://ci.appveyor.com/api/projects/status/github/SentimentFS/SentimentFS_TextUtilities?svg=true)](https://ci.appveyor.com/project/SentimentFS/SentimentFS_TextUtilities)
+[![Build History](https://buildstats.info/travisci/chart/SentimentFS/SentimentFS_TextUtilities)](https://travis-ci.org/SentimentFS/SentimentFS_TextUtilities/builds) | [![Build History](https://buildstats.info/appveyor/chart/SentimentFS/SentimentFS_TextUtilities)](https://ci.appveyor.com/project/SentimentFS/SentimentFS_TextUtilities)  
 
 
-## Build Status
+## Nuget 
 
-Mono | .NET | MyGet
----- | ---- | ----
-[![Build Status](https://travis-ci.org/SentimentFS/SentimentFS.TextUtilities.svg?branch=master)](https://travis-ci.org/SentimentFS/SentimentFS.TextUtilities) |[![Build status](https://ci.appveyor.com/api/projects/status/p73j0p8usjvdx78n?svg=true)](https://ci.appveyor.com/project/dominikus1993/sentimentfs-textutilities)
- | [![sentimentalanalysisml MyGet Build Status](https://www.myget.org/BuildSource/Badge/sentimentalanalysisml?identifier=6e5f8fa1-ca96-4832-8f58-649c6e121122)](https://www.myget.org/)
+Stable | Prerelease
+--- | ---
+[![NuGet Badge](https://buildstats.info/nuget/SentimentFS_TextUtilities)](https://www.nuget.org/packages/SentimentFS_TextUtilities/) | [![NuGet Badge](https://buildstats.info/nuget/SentimentFS_TextUtilities?includePreReleases=true)](https://www.nuget.org/packages/SentimentFS_TextUtilities/)
 
 
-## BuildHistory
-[![Build history](https://buildstats.info/appveyor/chart/dominikus1993/sentimentfs-textutilities)](https://ci.appveyor.com/project/dominikus1993/sentimentfs-textutilities/history)
+
+Does the thing

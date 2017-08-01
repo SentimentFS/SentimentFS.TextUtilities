@@ -1,22 +1,42 @@
-﻿<Project Sdk="FSharp.NET.Sdk;Microsoft.NET.Sdk">
-
+<Project Sdk="FSharp.NET.Sdk;Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
-    <Version>1.0.1</Version>
-    <Authors>Dominik Kotecki</Authors>
-    <Company>SentimentFS</Company>
-    <Description>SentimentFS Text Utilities</Description>
+    <TargetFrameworks>netstandard1.6;net45;net461</TargetFrameworks>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <Title>SentimentFS_TextUtilities</Title>
+    <Description>SentimentFS_TextUtilities does the thing!</Description>
+    <!-- summary is not migrated from project.json, but you can use the <Description> property for that if needed. -->
+    <PackageTags>f#, fsharp</PackageTags>
+    <PackageProjectUrl>https://github.com/SentimentFS/SentimentFS_TextUtilities</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/SentimentFS/SentimentFS_TextUtilities/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <RepositoryType>git</RepositoryType>
+    <Authors>MyUsername</Authors>
+    <RepositoryUrl>https://github.com/SentimentFS/SentimentFS_TextUtilities</RepositoryUrl>
+    <!-- owners is not supported in MSBuild -->
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Text.fs" />
     <Compile Include="Tokenization.fs" />
     <Compile Include="Filter.fs" />
   </ItemGroup>
-
+  <ItemGroup Condition="'$(TargetFramework)'=='net45'">
+    <PackageReference Include="FSharp.Core" Version="4.0.0.*" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)'=='net461'">
+    <PackageReference Include="FSharp.Core" Version="4.2.*" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)'=='netstandard1.6'">
+    <PackageReference Include="FSharp.Core" Version="4.2.*" />
+  </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="FSharp.Core" Version="4.1.*" />
     <PackageReference Include="FSharp.NET.Sdk" Version="1.0.*" PrivateAssets="All" />
   </ItemGroup>
+
 
 </Project>
