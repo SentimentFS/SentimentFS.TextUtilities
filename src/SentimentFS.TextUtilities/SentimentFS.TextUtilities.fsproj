@@ -1,6 +1,6 @@
 <Project Sdk="FSharp.NET.Sdk;Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.6;net45;net461</TargetFrameworks>
+    <TargetFrameworks>netstandard1.6;net461</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -24,9 +24,6 @@
     <Compile Include="Text.fs" />
     <Compile Include="Tokenization.fs" />
     <Compile Include="Filter.fs" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)'=='net45'">
-    <PackageReference Include="FSharp.Core" Version="4.0.0.*" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)'=='net461'">
     <PackageReference Include="FSharp.Core" Version="4.2.*" />
