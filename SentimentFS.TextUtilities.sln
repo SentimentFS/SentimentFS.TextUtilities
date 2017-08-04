@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{07488C71-DD75-40A0-B891-4F2375836656}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+	EndProjectSection
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{178A49BF-FBE3-42CC-B8A3-F5250143D955}"
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "SentimentFS.TextUtilities", "src\SentimentFS.TextUtilities\SentimentFS.TextUtilities.fsproj", "{A634996E-D586-4A0A-BBEF-147D683ADAE9}"
