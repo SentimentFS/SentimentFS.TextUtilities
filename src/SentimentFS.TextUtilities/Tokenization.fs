@@ -1,6 +1,6 @@
 namespace SentimentFS.TextUtilities
 module Tokenizer =
-    open SentimentFS.TextUtilities.String
+    open SentimentFS.TextUtilities.Text
     open System
 
     let tokenize =
