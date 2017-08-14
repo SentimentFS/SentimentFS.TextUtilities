@@ -9,11 +9,13 @@ module Text =
 
     let skip count (text:string) =
         text.Substring(count, text.Length-count)
+
     let skipPrefix prefix (text:string) =
         if text.StartsWith prefix then
             skip prefix.Length text
         else
             text
+
     let removeSuffix suffix (text:string) =
         if text.EndsWith suffix then
             chop suffix.Length text
@@ -25,6 +27,7 @@ module Text =
             (chop suffix.Length text) + replacement
         else
             text
+
     let replacePrefix prefix (replacement:string)  (text:string) =
         if text.StartsWith prefix then
             replacement + (skip prefix.Length text)
