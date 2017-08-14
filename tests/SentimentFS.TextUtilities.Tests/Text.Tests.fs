@@ -35,4 +35,20 @@ module Text =
                     let subject = "dominik" |> removeSuffix "inifk"
                     Expect.equal subject "dominik" "trimmed word should be the same"
             ]
+            testList "replaceSuffix" [
+                testCase "text is suffix" <| fun _ ->
+                    let subject = "dominik" |> replaceSuffix "inik" "ino"
+                    Expect.equal subject "domino" "replaced word should equal domino"
+                testCase "text is not suffix" <| fun _ ->
+                    let subject = "dominik" |> replaceSuffix "inifk" "i"
+                    Expect.equal subject "dominik" "replaced word should be the same"
+            ]
+            testList "replacePrefix" [
+                testCase "text is prefix" <| fun _ ->
+                    let subject = "hello world" |> replacePrefix "hello " ""
+                    Expect.equal subject "world" "replaced word should equal world"
+                testCase "text is not prefix" <| fun _ ->
+                    let subject = "world" |> replacePrefix "hello" ""
+                    Expect.equal subject "world" "replaced word should be the same"
+            ]
         ]

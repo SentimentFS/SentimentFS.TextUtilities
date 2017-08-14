@@ -20,6 +20,17 @@ module Text =
         else
             text
 
+    let replaceSuffix suffix (replacement:string) (text:string) =
+        if text.EndsWith suffix then
+            (chop suffix.Length text) + replacement
+        else
+            text
+    let replacePrefix prefix (replacement:string)  (text:string) =
+        if text.StartsWith prefix then
+            replacement + (skip prefix.Length text)
+        else
+            text
+
     let replace (pattern: string)(replacement: string)(word: string) =
         Regex.Replace(word, pattern, replacement)
 
