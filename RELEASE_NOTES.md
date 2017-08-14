@@ -1,3 +1,6 @@
+#### 0.3.1 - 14.08.2017
+* netcore2 sdk
+
 #### 0.3.0 - 14.08.2017
 * replace suffix
 * replace prefix
