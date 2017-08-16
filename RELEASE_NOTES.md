@@ -1,3 +1,6 @@
+#### 0.5.0 - 16.08.2017
+* endswith and startwith
+
 #### 0.4.0 - 16.08.2017
 * Regex utilities
 
