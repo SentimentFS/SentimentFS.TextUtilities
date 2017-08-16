@@ -35,6 +35,20 @@ module Regex =
                                   | _ -> ""
                     Expect.equal subject "" "should not match"
             ]
+            testList "SuffixMatch" [
+                testCase "matched text" <| fun _ ->
+                    let dominik = "Dominik"
+                    let subject = match dominik with
+                                  | SuffixMatch "ik" value -> value
+                                  | _ -> ""
+                    Expect.equal subject "ik" "should be matched and equal ik"
+                testCase "not matched text" <| fun _ ->
+                    let dominik = "dominik"
+                    let subject = match dominik with
+                                  | FirstMatch "fdsa" value -> value
+                                  | _ -> ""
+                    Expect.equal subject "" "should not match"
+            ]
         ]
 
 module Text =

@@ -65,6 +65,13 @@ module Regex =
             Some(m.Value)
         else
             None
+         
+    let (|SuffixMatch|_|) pattern input =
+        let m = Regex.Match(input, pattern + "$")
+        if m.Success then 
+            Some(m.Value)
+        else 
+            None
 
     let replace (pattern: string)(replacement: string)(word: string) =
         Regex.Replace(word, pattern, replacement)
