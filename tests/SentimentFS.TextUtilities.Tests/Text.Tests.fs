@@ -36,6 +36,7 @@ module Regex =
                     Expect.equal subject "" "should not match"
             ]
         ]
+
 module Text =
     open Expecto
     open SentimentFS.TextUtilities.Text
