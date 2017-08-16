@@ -43,6 +43,11 @@ module Text =
     let toLower(word: string) =
         word.ToLower()
 
+    let endsWith (word: string) ([<ParamArray>] args: string array) =  
+        args |> Array.exists(fun x -> word.EndsWith(x))
+
+    let startsWith (word: string) ([<ParamArray>] args: string array) =  
+        args |> Array.exists(fun x -> word.StartsWith(x))
 
 module Regex =
     open System.Text.RegularExpressions

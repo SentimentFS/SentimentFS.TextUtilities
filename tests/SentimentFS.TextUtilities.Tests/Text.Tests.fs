@@ -88,4 +88,20 @@ module Text =
                     let subject = "world" |> replacePrefix "hello" ""
                     Expect.equal subject "world" "replaced word should be the same"
             ]
+            testList "endsWith" [
+                testCase "when text ends with any params" <| fun _ ->
+                    let subject = endsWith "word" [|"ord"|]
+                    Expect.isTrue subject "should be true"
+                testCase "when text no ends with any params" <| fun _ ->
+                    let subject = endsWith "word" [|"ordsd"|]
+                    Expect.isFalse subject "should be false"
+            ]
+            testList "startsWith" [
+                testCase "when text starts with any params" <| fun _ ->
+                    let subject = startsWith "word" [|"wor"|]
+                    Expect.isTrue subject "should be true"
+                testCase "when text no starts with any params" <| fun _ ->
+                    let subject = startsWith "word" [|"ordsd"|]
+                    Expect.isFalse subject "should be false"
+            ]
         ]
