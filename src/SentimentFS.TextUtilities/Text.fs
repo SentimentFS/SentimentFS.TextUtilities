@@ -42,3 +42,24 @@ module Text =
 
     let toLower(word: string) =
         word.ToLower()
+
+
+module Regex =
+    open System.Text.RegularExpressions
+
+    let (|Regex|_|) pattern input =
+        let m = Regex.Match(input, pattern)
+        if m.Success then
+            Some(List.tail [ for g in m.Groups -> g.Value ])
+        else
+            None
+
+    let (|FirstMatch|_|) pattern input =
+        let m = Regex.Match(input, pattern)
+        if m.Success then
+            Some(m.Value)
+        else
+            None
+
+    let replace (pattern: string)(replacement: string)(word: string) =
+        Regex.Replace(word, pattern, replacement)

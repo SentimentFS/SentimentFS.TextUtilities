@@ -1,5 +1,41 @@
 namespace SentimentFS.TextUtilities.Tests
 
+module Regex =
+    open Expecto
+    open SentimentFS.TextUtilities.Regex
+
+    [<Tests>]
+    let test =
+        testList "Regex" [
+            testList "Regex" [
+                testCase "matched text" <| fun _ ->
+                    let dominik = "Dominik"
+                    let subject = match dominik with
+                                  | Regex "([A-Z])\w+" _ -> true
+                                  | _ -> false
+                    Expect.isTrue subject "should be matched"
+                testCase "not matched text" <| fun _ ->
+                    let dominik = "dominik"
+                    let subject = match dominik with
+                                  | Regex "([A-Z])\w+" _ -> true
+                                  | _ -> false
+                    Expect.isFalse subject "should be not matched"
+            ]
+            testList "FirstMatch" [
+                testCase "matched text" <| fun _ ->
+                    let dominik = "Dominik"
+                    let subject = match dominik with
+                                  | FirstMatch "([A-Z])\w+" value -> value
+                                  | _ -> ""
+                    Expect.equal subject "Dominik" "should be matched and equal Dominik"
+                testCase "not matched text" <| fun _ ->
+                    let dominik = "dominik"
+                    let subject = match dominik with
+                                  | FirstMatch "([A-Z])\w+" value -> value
+                                  | _ -> ""
+                    Expect.equal subject "" "should not match"
+            ]
+        ]
 module Text =
     open Expecto
     open SentimentFS.TextUtilities.Text
