@@ -5,7 +5,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Tokenization.Tests.fs" />
-    <Compile Include="Filter.Tests.fs" />
     <Compile Include="Text.Tests.fs" />
     <Compile Include="Main.fs" />
   </ItemGroup>

@@ -22,7 +22,6 @@
   <ItemGroup>
     <Compile Include="Text.fs" />
     <Compile Include="Tokenization.fs" />
-    <Compile Include="Filter.fs" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
