@@ -1,3 +1,8 @@
+#### 0.7.0 - 07.11.2017
+* remove Filter module
+* upgrade framework to netstandard2.0
+* update dependencies
+
 #### 0.6.0 - 16.08.2017
 * SuffixMatch
 
