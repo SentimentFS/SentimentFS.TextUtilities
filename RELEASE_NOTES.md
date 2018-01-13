@@ -1,3 +1,6 @@
+#### 0.8.0 - 13.01.2018
+* tfidf
+
 #### 0.7.0 - 07.11.2017
 * remove Filter module
 * upgrade framework to netstandard2.0
