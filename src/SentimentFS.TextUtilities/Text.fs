@@ -43,11 +43,26 @@ module Text =
     let toLower(word: string) =
         word.ToLower()
 
-    let endsWith (word: string) ([<ParamArray>] args: string array) =  
+    let endsWith (word: string) ([<ParamArray>] args: string array) =
         args |> Array.exists(fun x -> word.EndsWith(x))
 
-    let startsWith (word: string) ([<ParamArray>] args: string array) =  
+    let startsWith (word: string) ([<ParamArray>] args: string array) =
         args |> Array.exists(fun x -> word.StartsWith(x))
+
+    let tf(word: string)(words: string list) =
+        let count = words |> List.filter(fun x -> x = word) |> List.length |> float
+        let length = words |> List.length |> float
+        count / length
+
+    let idf(word: string) (wordsList: string list list) =
+        let numberContaining = wordsList |> List.sumBy(fun x -> if (x |> List.contains(word)) then 1 else 0) |> float
+        if(numberContaining <> 0.0) then
+            System.Math.Log10((wordsList |> List.length |> float) / (numberContaining))
+        else
+            System.Math.Log10((wordsList |> List.length |> float) / 1.0)
+
+    let tfidf(word: string)(words: string list)(wordsList: string list list) =
+        (tf(word)(words)) * (idf(word)(wordsList))
 
 module Regex =
     open System.Text.RegularExpressions
@@ -65,12 +80,12 @@ module Regex =
             Some(m.Value)
         else
             None
-         
+
     let (|SuffixMatch|_|) pattern input =
         let m = Regex.Match(input, pattern + "$")
-        if m.Success then 
+        if m.Success then
             Some(m.Value)
-        else 
+        else
             None
 
     let replace (pattern: string)(replacement: string)(word: string) =
