@@ -1,5 +1,6 @@
 namespace SentimentFS.TextUtilities.Tests
 
+open Expecto.Flip
 module Regex =
     open Expecto
     open SentimentFS.TextUtilities.Regex
@@ -117,5 +118,48 @@ module Text =
                 testCase "when text no starts with any params" <| fun _ ->
                     let subject = startsWith "word" [|"ordsd"|]
                     Expect.isFalse subject "should be false"
+            ]
+            testList "tfidf" [
+                testList "tf" [
+                    testCase "Word doesnt exists in document " <| fun _ ->
+                        let document = ["this"; "is"; "a"; "a"; "sample"]
+                        let subject = document |> tf "example"
+                        Expect.equal subject 0.0 "result should equal 0.0"
+                    testCase "Word exists in document " <| fun _ ->
+                        let document = ["this"; "is"; "another"; "another"; "example"; "example"; "example"]
+                        let subject = document |> tf "example"
+                        Expect.isGreaterThan subject 0.0 "result should be greater than 0.0"
+                        Expect.floatClose Accuracy.medium subject 0.4285714286 "result should equal 0.4285714286"
+                ]
+                testList "idf" [
+                    testCase "Word doesnt exists in document " <| fun _ ->
+                        let document1 = ["this"; "is"; "a"; "a"; "sample"]
+                        let document2 = ["this"; "is"; "another"; "another"; "example"; "example"; "example"]
+                        let documents = [document1; document2]
+                        let subject = idf("this")(documents)
+                        Expect.equal subject 0.0 "result should equal 0.0"
+                    testCase "Word exists in document " <| fun _ ->
+                        let document1 = ["this"; "is"; "a"; "a"; "sample"]
+                        let document2 = ["this"; "is"; "another"; "another"; "example"; "example"; "example"]
+                        let documents = [document1; document2]
+                        let subject = idf("example")(documents)
+                        Expect.isGreaterThan subject 0.0 "result should be greater than 0.0"
+                        Expect.floatClose Accuracy.medium subject 0.3010299957 "result should equal 0.3010299957"
+                ]
+                testList "tf-idf" [
+                    testCase "Word doesnt exists in document " <| fun _ ->
+                        let document1 = ["this"; "is"; "a"; "a"; "sample"]
+                        let document2 = ["this"; "is"; "another"; "another"; "example"; "example"; "example"]
+                        let documents = [document1; document2]
+                        let subject = tf("example")(document1) * idf("example")(documents)
+                        Expect.equal subject 0.0 "result should equal 0.0"
+                    testCase "Word exists in document " <| fun _ ->
+                        let document1 = ["this"; "is"; "a"; "a"; "sample"]
+                        let document2 = ["this"; "is"; "another"; "another"; "example"; "example"; "example"]
+                        let documents = [document1; document2]
+                        let subject = tf("example")(document2) * idf("example")(documents)
+                        Expect.isGreaterThan subject 0.0 "result should be greater than 0.0"
+                        Expect.floatClose Accuracy.medium subject 0.1290128553 "result should equal 0.1290128553"
+                ]
             ]
         ]
